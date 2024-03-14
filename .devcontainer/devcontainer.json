@@ -1,7 +1,14 @@
 {
-    "name": "Systemd Codespace",
-    "dockerFile": "Dockerfile",
-    "runArgs": [ "--privileged", "-v /run/systemd/system:/run/systemd/system", "-v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket"],
+    "name": "Your Project Name",
+    "image": "your-docker-image:tag",
+    "runArgs": [
+        "-idt",
+        "--network", "host",
+        "--privileged",
+        "--name", "pve",
+        "--add-host", "pve:0.0.0.0",
+        "--hostname", "pve"
+    ],
 
     // Set *default* container specific settings.json values on container create.
     "settings": { 
@@ -9,20 +16,6 @@
     },
 
     // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [],
-
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-
-    // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "yarn install",
-
-    // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-    // "remoteUser": "vscode",
-
-    // Uncomment the next line if you want to publish any ports.
-    // "appPort": [],
-
-    // Uncomment the next line to run commands after the container is created.
-    // "postCreateCommand": "echo 'Container was successfully created!'"
+    "extensions": []
+    
 }
