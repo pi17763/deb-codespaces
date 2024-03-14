@@ -1,6 +1,7 @@
 {
     "name": "Systemd Codespace",
     "dockerFile": "Dockerfile",
+    "runArgs": [ "--privileged", "-v /run/systemd/system:/run/systemd/system", "-v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket"],
 
     // Set *default* container specific settings.json values on container create.
     "settings": { 
